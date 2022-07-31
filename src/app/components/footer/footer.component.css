@@ -1,0 +1,13 @@
+
+@media only screen and (max-width: 1000px) {
+  .letracorreo{
+    font-size: 14px;
+  }
+  .letraboton{
+    font-size: 12px;
+  }
+
+    .letracopy{
+      font-size: 12px;
+    }
+}

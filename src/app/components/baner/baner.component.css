@@ -1,0 +1,19 @@
+.baner{
+  position: relative;
+  text-align: center;
+}
+
+.textobaner{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .textobaner{
+    font-size: 12px;
+
+  }
+}

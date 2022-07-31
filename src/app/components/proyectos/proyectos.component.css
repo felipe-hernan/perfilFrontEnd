@@ -1,0 +1,62 @@
+.row{
+  display: flex;
+  justify-content: center;
+}
+.caja{
+  width: 70%;
+}
+.icono svg{
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.textoborde{
+  text-shadow: 0 0 3px black;
+}
+.btn{
+  padding: 3px 15px;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+h5{
+  font-size: 17px;
+}
+p{
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1000px) {
+  h5{
+    font-size: 15px;
+  }
+  p{
+    font-size: 12px;
+  }
+  .caja{
+    width: 90%;
+
+  }
+
+}
+
+@media only screen and (max-width: 765px) {
+
+  .caja{
+    width: 100%;
+
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+
+  .caja{
+    width: 70%;
+
+  }
+
+}
+

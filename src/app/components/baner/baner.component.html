@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="baner" *ngIf="usuario">
+    <img src="{{usuario.imagen}}" alt="perfil" class="img-fluid">
+    <div class="textobaner">
+      <h1>{{usuario.nombre}} {{usuario.apellido}}</h1>
+      <p>{{usuario.origen}}</p>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+
+.navegacion{
+  margin-top: 50px;
+}
+.iconredes{
+  width: 25px;
+}
+.botonposicion{
+  display: flex;
+  align-items: center;
+}
+.imagprograma{
+  width: 150px;
+  margin-top: -64px;
+}
+.yoprogramo{
+  margin-top: -28px;
+  font-style: inherit;
+}
+
+@media only screen and (max-width: 1000px) {
+  .imagprograma{
+    margin-top: 0px;
+  }
+  .iconredes{
+    width: 17px;
+  }
+  .letraboton{
+    font-size: 10px;
+  }
+  .yoprogramo{
+    margin-top: 40px;
+    font-size: 12px;
+  }
+}

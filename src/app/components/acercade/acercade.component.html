@@ -1,0 +1,13 @@
+
+<!--Contenido acerca de-->
+<div class="container " *ngIf="usuario">
+
+  <div class="acerca" *ngIf="usuario">
+    <ul>
+      <li>{{usuario.profecion}}</li>
+      <li>.</li>
+      <li>{{usuario.titulo}}</li>
+    </ul>
+    <p>{{usuario.descripcion}}</p>
+  </div>
+</div>

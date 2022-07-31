@@ -1,0 +1,231 @@
+<!--Modal-->
+<div class="container text-center mt-5 mb-5" id="main-container">
+  <!-- Boton para abrir el modal -->
+  <button type="button" class="btn btn-outline-light" (click)="abrirModal('add')">
+    Agregar Educación
+  </button>
+
+</div>
+
+<!-- Modal para agregar un nuevo educacion-->
+<div class="modal fade" id="guardarEducacionModal" tabindex="-1" aria-labelledby="guardarEducacionModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="guardarEducacionModalLabel" style="color: black;">Agregar educacion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+
+      <div class="modal-body" style="color: black;">
+        <form #guardarForm="ngForm" (ngSubmit)="guardarEducacion(guardarForm)">
+          <div class="form-group">
+            <label for="tituloEdu">Titulo</label>
+            <input type="text" ngModel name="tituloEdu" class="form-control" id="tituloEdu" placeholder="Titulo"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="fechaInicioEdu">Fecha inicio</label>
+            <input type="text" ngModel name="fechaInicioEdu" class="form-control" id="fechaInicioEdu"
+              placeholder="Fecha inicio" required>
+          </div>
+          <div class="form-group">
+            <label for="fechaFinEdu">Fecha fin</label>
+            <input type="text" ngModel name="fechaFinEdu" class="form-control" id="fechaFinEdu" placeholder="Fecha fin"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="descripcionEdu">Descripción</label>
+            <input type="text" ngModel name="descripcionEdu" class="form-control" id="descripcionEdu"
+              placeholder="Descripción" required>
+          </div>
+          <div class="form-group">
+            <label for="institucionEdu">Institución</label>
+            <input type="text" ngModel name="institucionEdu" class="form-control" id="institucionEdu"
+              placeholder="Institucion" required>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" id="guardar-educacion-form" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary" [disabled]="guardarForm.invalid">
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal para editar un nuevo proyecto-->
+<div class="modal fade" id="editarEducacionModal" tabindex="-1" aria-labelledby="editarEducacionModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarEducacionModalLabel" style="color: black;">Editar Educación
+          {{editarEducacion?.tituloEdu}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+
+      <div class="modal-body" style="color: black;">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="tituloEdu">Titulo</label>
+            <input type="text" ngModel="{{editarEducacion?.tituloEdu}}" name="tituloEdu" class="form-control"
+              id="tituloEdu" placeholder="Titulo" aria-describedby="emailHelp">
+          </div>
+          <input type="hidden" ngModel="{{editarEducacion?.idEdu}}" name="idEdu" class="form-control" id="idEdu"
+            placeholder="">
+          <div class="form-group">
+            <label for="descripcionEdu">Descripción</label>
+            <input type="text" ngModel="{{editarEducacion?.descripcionEdu}}" name="descripcionEdu" class="form-control"
+              id="descripcionEdu" placeholder="Descripcion">
+          </div>
+          <div class="form-group">
+            <label for="fechaInicioEdu">Fecha inicio</label>
+            <input type="text" ngModel="{{editarEducacion?.fechaInicioEdu}}" name="fechaInicioEdu" class="form-control"
+              id="fechaInicioEdu" placeholder="Fecha inicio">
+          </div>
+          <div class="form-group">
+            <label for="fechaFinEdu">Fecha fin</label>
+            <input type="text" ngModel="{{editarEducacion?.fechaFinEdu}}" name="fechaFinEdu" class="form-control"
+              id="fechaFinEdu" placeholder="Fecha fin">
+          </div>
+          <div class="form-group">
+            <label for="institucionEdu">Institución</label>
+            <input type="text" ngModel="{{editarEducacion?.institucionEdu}}" name="institucionEdu" class="form-control" id="institucionEdu"
+              placeholder="Institución">
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+        <button (click)="actualizarEducacion(editForm.value)" class="btn btn-primary" data-bs-dismiss="modal">
+          Guardar cambios
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal para borrar un nuevo proyecto-->
+<div class="modal fade" id="borrarEducacionModal" tabindex="-1" aria-labelledby="borrarEducacionModalLabel"
+  aria-hidden="true" data-bs-target="#borrarEducacionModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="borrarEducacionModalLabel" style="color: black;">Borrar educación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+
+      <div class="modal-body" style="color: black;">
+        <p>
+          Estas seguro de que quieres eliminar?
+          {{borrarEducacion?.tituloEdu}}
+        </p>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          No
+        </button>
+        <button (click)="borrarUnaEducacion(borrarEducacion!.idEdu)" class="btn btn-danger" data-bs-dismiss="modal">
+          Si
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Contenido-->
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="hori-timeline" dir="ltr">
+            <ul class="list-inline events">
+              <li class="list-inline-item event-list" *ngFor="let edu of educacion">
+                <div class="px-4">
+                  <div class="event-date bg-soft-primary text-black texto-fecha mt-2">{{edu.fechaInicioEdu+" -
+                    "}}{{edu.fechaFinEdu}}</div>
+                  <h5 class="textotitulo">{{edu.tituloEdu}}</h5>
+                  <p class="text-muted">{{edu.descripcionEdu}}</p>
+                  <div>
+                    <h5 class="textoinsti">{{edu.institucionEdu}}</h5>
+                  </div>
+
+                  <div class="icono text-center">
+                    <a title="Editar" class="btn " data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    (click)="abrirModal('edit',edu)">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                      </svg>
+                    </a>
+                    <a title="Borrar" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    (click)="abrirModal('delete',edu)">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-square"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                        <path
+                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                      </svg>
+                    </a>
+
+                  </div>
+                </div>
+              </li>
+              <!-- end card
+              <li class="list-inline-item event-list">
+                <div class="px-4">
+                  <div class="event-date bg-soft-primary text-black textofecha">Fecha</div>
+                  <h5 class="font-size-16 textotitulo">Titulo o certificacion</h5>
+                  <p class="text-muted">Breve descripcion de las tecnologias aprendidas</p>
+                  <div>
+                    <h5 class="font-size-3 textoinsti">Institucion</h5>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-inline-item event-list">
+                <div class="px-4">
+                  <div class="event-date bg-soft-primary text-black letrafecha">Fecha</div>
+                  <h5 class="font-size-16 textotitulo">Titulo o certificacion</h5>
+                  <p class="text-muted">Breve descripcion de las tecnologias aprendidas</p>
+                  <div>
+                    <h5 class="font-size-3 textoinsti">Institucion</h5>
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item event-list">
+                <div class="px-4">
+                  <div class="event-date bg-soft-primary text-black">Fecha</div>
+                  <h5 class="font-size-16 textotitulo">Titulo o certificacion</h5>
+                  <p class="text-muted">Breve descripcion de las tecnologias aprendidas</p>
+                  <div>
+                    <h5 class="textoinsti">Institucion</h5>
+                  </div>
+                </div>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+</div>

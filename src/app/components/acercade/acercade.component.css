@@ -1,0 +1,63 @@
+.container{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.acerca{
+  width: 50%;
+}
+
+.acerca ul{
+  list-style: outside none none;
+  display: flex;
+  justify-content: center;
+}
+.acerca ul li{
+  padding: 5px 10px;
+}
+
+.icono svg{
+  width: 20px;
+  height: 20px;
+  color: white;
+  margin: 6px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .acerca{
+    width: 80%;
+  }
+  .acerca p{
+    font-size: 12px;
+  }
+  .acerca h3{
+    font-size: 16px;
+  }
+  .acerca ul{
+    font-size: 13px;
+  }
+}
+
+
+.baner{
+  position: relative;
+  text-align: center;
+}
+
+.textobaner{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .textobaner{
+    font-size: 12px;
+
+  }
+}
+

@@ -1,0 +1,21 @@
+.color{
+  background-color: aqua;
+}
+.caja{
+  width: 80%;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+.row{
+
+  display: flex;
+  justify-content: center;
+}
+.icono svg{
+  width: 20px;
+  height: 20px;
+  color: white;
+  margin: 6px;
+}
