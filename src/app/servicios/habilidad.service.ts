@@ -7,7 +7,7 @@ import { Habilidad } from '../models/habilidad';
   providedIn: 'root'
 })
 export class HabilidadService {
-  private apiServerUrl = 'http://localhost:8080';
+  private apiServerUrl = 'https://baseperfilpersonal.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   public traerHabilidad(): Observable<Habilidad[]> {

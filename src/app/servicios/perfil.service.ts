@@ -8,7 +8,7 @@ import { Usuario } from '../models/usuario';
 })
 export class PerfilService {
 
-  private apiServerUrl = 'http://localhost:8080';
+  private apiServerUrl = 'https://baseperfilpersonal.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   public traerUsuario():Observable<Usuario>{

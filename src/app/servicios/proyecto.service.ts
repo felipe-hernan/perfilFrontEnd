@@ -7,7 +7,7 @@ import { Proyecto } from '../models/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  private apiServerUrl = 'http://localhost:8080';
+  private apiServerUrl = 'https://baseperfilpersonal.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Experiencia } from '../models/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiServerUrl = 'http://localhost:8080';
+  private apiServerUrl = 'https://baseperfilpersonal.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   public traerExperiencia(): Observable<Experiencia[]> {
