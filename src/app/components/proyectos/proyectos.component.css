@@ -5,6 +5,11 @@
 .caja{
   width: 70%;
 }
+.columnaImagen{
+  position: relative;
+  display: inline-block;
+}
+
 .icono svg{
   width: 20px;
   height: 20px;
