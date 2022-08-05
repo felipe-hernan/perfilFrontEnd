@@ -1,0 +1,39 @@
+[debug] [2022-08-05T00:16:28.123Z] ----------------------------------------------------------------------
+[debug] [2022-08-05T00:16:28.124Z] Command:       /home/felipe-pc/.nvm/versions/node/v16.15.0/bin/node /home/felipe-pc/.nvm/versions/node/v16.15.0/bin/firebase deploy
+[debug] [2022-08-05T00:16:28.125Z] CLI Version:   11.4.0
+[debug] [2022-08-05T00:16:28.125Z] Platform:      linux
+[debug] [2022-08-05T00:16:28.125Z] Node Version:  v16.15.0
+[debug] [2022-08-05T00:16:28.125Z] Time:          Thu Aug 04 2022 21:16:28 GMT-0300 (hora estándar de Argentina)
+[debug] [2022-08-05T00:16:28.125Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-05T00:16:28.178Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-05T00:16:28.179Z] > authorizing via signed-in user (rrizolow@gmail.com)
+[debug] [2022-08-05T00:16:28.179Z] [iam] checking project perfilpersonal-52e49 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-08-05T00:16:28.180Z] > refreshing access token with scopes: []
+[debug] [2022-08-05T00:16:28.181Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-05T00:16:28.181Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-05T00:16:38.205Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2022-08-05T00:16:38.206Z] > refreshing access token with scopes: []
+[debug] [2022-08-05T00:16:38.207Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-05T00:16:38.207Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-05T00:16:48.222Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2022-08-05T00:16:58.243Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/auth.js:145:12)
+    at refreshTokens (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/auth.js:509:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.getAccessToken (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/apiv2.js:149:23)
+    at async Client.addAuthHeader (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/apiv2.js:140:21)
+    at async Client.request (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/apiv2.js:96:34)
+    at async getFirebaseProject (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/management/projects.js:295:21)
+    at async getDefaultHostingSite (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/commands/deploy.js:74:9)
+    at async /home/felipe-pc/.nvm/versions/node/v16.15.0/lib/node_modules/firebase-tools/lib/command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project perfilpersonal-52e49. Please make sure the project exists and your account has permission to access it.

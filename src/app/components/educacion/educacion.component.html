@@ -37,8 +37,7 @@
           </div>
           <div class="form-group">
             <label for="descripcionEdu">Descripción</label>
-            <input type="text" ngModel name="descripcionEdu" class="form-control" id="descripcionEdu"
-              placeholder="Descripción" required>
+              <textarea ngModel  name="descripcionEdu" id="descripcionEdu" cols="30" rows="10" placeholder="Descripción" class="form-control" required></textarea>
           </div>
           <div class="form-group">
             <label for="institucionEdu">Institución</label>
@@ -83,8 +82,7 @@
             placeholder="">
           <div class="form-group">
             <label for="descripcionEdu">Descripción</label>
-            <input type="text" ngModel="{{editarEducacion?.descripcionEdu}}" name="descripcionEdu" class="form-control"
-              id="descripcionEdu" placeholder="Descripcion">
+              <textarea ngModel="{{editarEducacion?.descripcionEdu}}" placeholder="Descripcion" class="form-control" name="descripcionEdu" id="descripcionEdu" cols="30" rows="6"></textarea>
           </div>
           <div class="form-group">
             <label for="fechaInicioEdu">Fecha inicio</label>
